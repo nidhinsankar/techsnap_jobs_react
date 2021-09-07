@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [candidates, setCandidates] = useState(0);
+
+  // let IncreaseNumber =
+  useEffect(() => {
+    setInterval(() => {
+      setCandidates((candidates) => {
+        if (candidates <= 500) {
+          setCandidates(candidates + 2);
+        } else {
+          return candidates;
+        }
+      }, 1);
+    });
+    // interval();
+  });
+
   return (
     <>
       <section className="home-section">
@@ -34,7 +50,7 @@ const HeroSection = () => {
             <div className="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
               <div className="mb-2">
                 <strong className="number" id="candidates" data-number="500">
-                  0
+                  {candidates}
                 </strong>
               </div>
               <span className="caption">Candidates</span>
@@ -43,7 +59,7 @@ const HeroSection = () => {
             <div className="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
               <div className="mb-2">
                 <strong className="number" id="posted" data-number="50">
-                  0
+                  {candidates}
                 </strong>
               </div>
               <span className="caption">Jobs Posted</span>
@@ -52,7 +68,7 @@ const HeroSection = () => {
             <div className="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
               <div className="mb-2">
                 <strong className="number" id="filled" data-number="200">
-                  0
+                  {candidates}
                 </strong>
               </div>
               <span className="caption">Jobs Filled</span>
@@ -61,7 +77,7 @@ const HeroSection = () => {
             <div className="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
               <div className="mb-2">
                 <strong className="number" id="companies" data-number="5">
-                  0
+                  {candidates}
                 </strong>
               </div>
               <span className="caption">Companies</span>
